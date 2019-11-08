@@ -1,0 +1,71 @@
+server:
+  port: 8899
+spring:
+  profiles:
+    active: dev
+  application:
+    name: td
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 30MB
+  aop:
+    proxy-target-class: true
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost:3307/liyetest?characterEncoding=utf-8&serverTimezone=GMT%2B8
+      username: root
+      password: 857915060
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      #初始化大小
+      initial-size: 5
+      max-active: 100
+      min-idle: 5
+      #获取连接等待超时时间
+      max-wait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      #配置一个连接在池中的最小生存时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      validation-query-timeout: 60000
+      #建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，
+      #如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效
+      test-while-idle: true
+      #申请连接时检测连接是否有效，开启会消耗性能
+      test-on-borrow: false
+      #归还连接时检测连接是否有效，开启会消耗性能
+      test-on-return: false
+      #打开PSCache,并且指定每个连接上的PSCache大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filter:
+        #配置StatFilter
+        stat:
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 5000
+        #配置WallFilter
+        wall:
+          enabled: false
+          db-type: mysql
+          config:
+            delete-allow: false
+            drop-table-allow: false
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.yeelee.TD.entity
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.yeelee.TD.entity
+  global-config:
+    refresh: true
+    db-config:
+      db-type: mysql
+      id-type: uuid
+      logic-delete-value: 1
+      logic-not-delete-value: 0
