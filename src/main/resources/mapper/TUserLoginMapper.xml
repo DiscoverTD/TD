@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yeelee.TD.mapper.TUserLoginMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yeelee.TD.entity.TUserLogin">
+        <id column="pkid" property="pkid" />
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="phone_num" property="phoneNum"/>
+        <result column="salt" property="salt"/>
+        <result column="wechat_open_id" property="wechatOpenId"/>
+        <result column="name" property="name"/>
+        <result column="nickname" property="nickname"/>
+        <result column="status" property="status"/>
+        <result column="head_img" property="headImg"/>
+        <result column="created_time" property="createdTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        pkid, username, password, phone_num, salt, wechat_open_id, name, nickname, status, head_img, created_time, update_time
+    </sql>
+</mapper>

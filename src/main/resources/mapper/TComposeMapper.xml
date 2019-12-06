@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yeelee.TD.mapper.TComposeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yeelee.TD.entity.TCompose">
+        <id column="pkid" property="pkid" />
+        <result column="content" property="content"/>
+        <result column="user_id" property="userId"/>
+        <result column="video_path" property="videoPath"/>
+        <result column="status" property="status"/>
+        <result column="record_type" property="recordType"/>
+        <result column="location" property="location"/>
+        <result column="is_open" property="isOpen"/>
+        <result column="img_path" property="imgPath"/>
+        <result column="created_time" property="createdTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        pkid, content, user_id, video_path, status, record_type, location, is_open, img_path, created_time
+    </sql>
+</mapper>

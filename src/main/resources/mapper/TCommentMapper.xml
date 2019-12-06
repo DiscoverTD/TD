@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yeelee.TD.mapper.TCommentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yeelee.TD.entity.TComment">
+        <id column="pkid" property="pkid" />
+        <result column="compose_id" property="composeId"/>
+        <result column="content" property="content"/>
+        <result column="from_userid" property="fromUserid"/>
+        <result column="created_time" property="createdTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        pkid, compose_id, content, from_userid, created_time
+    </sql>
+</mapper>
