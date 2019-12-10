@@ -15,6 +15,6 @@ import org.apache.ibatis.annotations.Select;
  */
 public interface TPraiseMapper extends BaseMapper<TPraise> {
 
-    @Select("select count(pkid) from t_praise where type_id=#{composeId} and type=#{type} and status=1")
-    long getPraiseNum(@Param("composeId") String composeId,@Param("type") String type);
+    @Select("select count(pkid) from t_praise where type_id=#{typeId} and type=#{type} and status=1")
+    long getPraiseNum(@Param("typeId") String typeId,@Param("type") String type);
 }

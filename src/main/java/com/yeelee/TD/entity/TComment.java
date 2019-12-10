@@ -47,5 +47,23 @@ public class TComment implements Serializable {
     @TableField("created_time")
     private Date createdTime;
 
+    @ApiModelProperty(value = "排序编号")
+    @TableField("order_no")
+    private Long orderNo;
 
+    //点赞次数
+    @TableField(exist=false)
+    private long praiseNum;
+
+    //回复次数
+    @TableField(exist=false)
+    private long replyNum;
+
+    //发表日记人的头像
+    @TableField(exist=false)
+    private String userImage;
+
+    //发表日记人的昵称
+    @TableField(exist=false)
+    private String userNickname;
 }

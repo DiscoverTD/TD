@@ -14,10 +14,11 @@
         <result column="is_open" property="isOpen"/>
         <result column="img_path" property="imgPath"/>
         <result column="created_time" property="createdTime"/>
+        <result column="order_no" property="orderNo"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        pkid, content, user_id, video_path, status, record_type, location, is_open, img_path, created_time
+        pkid, content, user_id, video_path, status, record_type, location, is_open, img_path, created_time,order_no
     </sql>
 </mapper>

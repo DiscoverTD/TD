@@ -22,7 +22,7 @@ public class TPraiseServiceImpl extends ServiceImpl<TPraiseMapper, TPraise> impl
     TPraiseMapper praiseMapper;
 
     @Override
-    public long getPraiseNum(String composeId, String type) {
-        return praiseMapper.getPraiseNum(composeId,type);
+    public long getPraiseNum(String typeId, String type) {
+        return praiseMapper.getPraiseNum(typeId,type);
     }
 }

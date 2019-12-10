@@ -34,16 +34,25 @@ public class TCommentController {
 
     /**
      * 条件分页查询
-     * @param pageNum 当前页码
-     * @param pageSize 每页条数
-     * @param tComment 查询对象
+     * @param orderNo 当前查询出的最小排序号
+     * @param composeId 作品(日记)id
      * @return
      */
     @ApiOperation(value = "条件分页查询")
     @PostMapping(value = "/list")
-    public ResponseObj listPageByCondition(@RequestParam("pageNum") Long pageNum, @RequestParam("pageSize") Long pageSize,@RequestBody TComment tComment){
-        IPage<TComment> page = tCommentService.page(new Page<>(pageNum, pageSize), new QueryWrapper<>(tComment));
-            return ResponseObj.ok("成功",page);
+    public ResponseObj listPageByCondition(@RequestParam("orderNo") Long orderNo ,@RequestParam("composeId") String composeId){
+        List<TComment> commentList = null;
+        try {
+            if (orderNo==0L){
+                // 第一次统一传0
+                orderNo =null;
+            }
+            commentList = tCommentService.getCommentList(composeId, orderNo);
+        } catch (Exception e) {
+            logger.error("查询作品【"+composeId+"】评论异常"+e);
+            return ResponseObj.servererror("服务异常");
+        }
+        return ResponseObj.ok("成功",commentList);
     }
 
     /**

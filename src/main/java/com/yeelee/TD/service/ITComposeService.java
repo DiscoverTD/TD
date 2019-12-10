@@ -16,8 +16,10 @@ import java.util.List;
 public interface ITComposeService extends IService<TCompose> {
 
     /**
-     * 获取评论
+     *
+     * @param tCompose
+     * @param orderNo 每次查出来日记表中最小的排序值作为条件查询数据库，如果没有则代表第一次查询，不需要条件了
      * @return
      */
-    List<TCompose> getComposeList(Long pageNum, Long pageSize,TCompose tCompose);
+    List<TCompose> getComposeList(TCompose tCompose,Long orderNo);
 }

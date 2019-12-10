@@ -12,10 +12,11 @@
         <result column="from_userid" property="fromUserid"/>
         <result column="to_userid" property="toUserid"/>
         <result column="created_time" property="createdTime"/>
+        <result column="order_no" property="orderNo"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        pkid, comment_id, reply_id, reply_type, content, from_userid, to_userid, created_time
+        pkid, comment_id, reply_id, reply_type, content, from_userid, to_userid, created_time, order_no
     </sql>
 </mapper>

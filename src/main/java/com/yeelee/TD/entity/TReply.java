@@ -39,7 +39,7 @@ public class TReply implements Serializable {
     @TableField("reply_id")
     private String replyId;
 
-    @ApiModelProperty(value = "回复类型(com: 表示针对评论进行回复;                                              rep:表示针对回复进行回复)")
+    @ApiModelProperty(value = "回复类型(com: 表示针对评论进行回复; rep:表示针对回复进行回复)")
     @TableField("reply_type")
     private String replyType;
 
@@ -59,5 +59,23 @@ public class TReply implements Serializable {
     @TableField("created_time")
     private Date createdTime;
 
+    @ApiModelProperty(value = "排序编号")
+    @TableField("order_no")
+    private Long orderNo;
 
+    //回复人的头像
+    @TableField(exist=false)
+    private String fromUserImage;
+
+    //回复人的昵称
+    @TableField(exist=false)
+    private String fromUserNickname;
+
+    //目标人的头像
+    @TableField(exist=false)
+    private String toUserImage;
+
+    //目标人的昵称
+    @TableField(exist=false)
+    private String toUserNickname;
 }

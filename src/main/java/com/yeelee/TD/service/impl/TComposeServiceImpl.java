@@ -1,17 +1,15 @@
 package com.yeelee.TD.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yeelee.TD.entity.TCompose;
+import com.yeelee.TD.entity.TUserLogin;
 import com.yeelee.TD.mapper.TComposeMapper;
-import com.yeelee.TD.service.ITCommentService;
-import com.yeelee.TD.service.ITComposeService;
-import com.yeelee.TD.service.ITEnshrineService;
-import com.yeelee.TD.service.ITPraiseService;
+import com.yeelee.TD.service.*;
+import com.yeelee.TD.utils.BizProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,15 +31,26 @@ public class TComposeServiceImpl extends ServiceImpl<TComposeMapper, TCompose> i
     ITCommentService commentService;
     @Autowired
     ITEnshrineService enshrineService;
+    @Autowired
+    ITUserLoginService userLoginService;
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
-    public List<TCompose> getComposeList(Long pageNum, Long pageSize, TCompose tCompose) {
+    public List<TCompose> getComposeList(TCompose tCompose,Long orderNo) {
         // 分页查询
-        IPage<TCompose> page = page(new Page<>(pageNum, pageSize), new QueryWrapper<>(tCompose));
         long starTime = System.currentTimeMillis();
+        QueryWrapper<TCompose> queryWrapper = new QueryWrapper<>(tCompose);
 
-        List<TCompose> records = page.getRecords();
-        for (TCompose t : records) {
+        queryWrapper.orderByDesc("order_no");
+        if (orderNo!=null){
+            // lt 小于 <
+            queryWrapper.lt("order_no",orderNo);
+        }
+        // 最后拼接sql
+        queryWrapper.last("limit 0,"+BizProperties.PAGESIZE+"");
+        List<TCompose> list = list(queryWrapper);
+        for (TCompose t : list) {
             String pkid = t.getPkid();
             // 查询点赞次数
             long praiseNum = praiseService.getPraiseNum(pkid, "0");
@@ -52,9 +61,13 @@ public class TComposeServiceImpl extends ServiceImpl<TComposeMapper, TCompose> i
             // 查询收藏次数
             long enshrineNum = enshrineService.getEnshrineNum(pkid);
             t.setEnshrineNum(enshrineNum);
+            // 查询日记发表人的头像，昵称，和id
+            TUserLogin user = userLoginService.getById(t.getUserId());
+            t.setUserImage(user.getHeadImg());
+            t.setUserNickname(user.getNickname());
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("耗时:"+(endTime-starTime)/1000+"s");
-        return records;
+        logger.info("查询日记总耗时:"+(endTime-starTime)/1000+"s");
+        return list;
     }
 }

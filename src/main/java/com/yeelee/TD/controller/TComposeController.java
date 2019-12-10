@@ -1,18 +1,16 @@
 package com.yeelee.TD.controller;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.springframework.web.bind.annotation.*;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.springframework.beans.factory.annotation.Autowired;
-import com.yeelee.TD.service.ITComposeService;
+
 import com.yeelee.TD.entity.TCompose;
+import com.yeelee.TD.service.ITComposeService;
+import com.yeelee.TD.utils.ResponseObj;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.yeelee.TD.utils.ResponseObj;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -34,16 +32,25 @@ public class TComposeController {
 
     /**
      * 条件分页查询
-     * @param pageNum 当前页码
-     * @param pageSize 每页条数
      * @param tCompose 查询对象
+     * @param orderNo 当前查询出的最小排序号
      * @return
      */
     @ApiOperation(value = "条件分页查询")
     @PostMapping(value = "/list")
-    public ResponseObj listPageByCondition(@RequestParam("pageNum") Long pageNum, @RequestParam("pageSize") Long pageSize,@RequestBody TCompose tCompose){
-        IPage<TCompose> page = tComposeService.page(new Page<>(pageNum, pageSize), new QueryWrapper<>(tCompose));
-            return ResponseObj.ok("成功",page);
+    public ResponseObj listPageByCondition(@RequestParam("orderNo") Long orderNo,@RequestBody TCompose tCompose){
+        List<TCompose> composeList = null;
+        try {
+            if (orderNo==0L){
+                // 第一次统一传0
+                orderNo =null;
+            }
+            composeList = tComposeService.getComposeList(tCompose,orderNo);
+        } catch (Exception e) {
+            logger.error("条件分页查询日志异常:"+e);
+            return ResponseObj.servererror("服务异常");
+        }
+        return ResponseObj.ok("成功",composeList);
     }
 
     /**
@@ -69,6 +76,7 @@ public class TComposeController {
             return ResponseObj.fail("失败");
         }
     }
+
     /**
      * 删除
      */

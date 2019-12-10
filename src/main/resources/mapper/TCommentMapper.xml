@@ -9,10 +9,11 @@
         <result column="content" property="content"/>
         <result column="from_userid" property="fromUserid"/>
         <result column="created_time" property="createdTime"/>
+        <result column="order_no" property="orderNo"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        pkid, compose_id, content, from_userid, created_time
+        pkid, compose_id, content, from_userid, created_time,order_no
     </sql>
 </mapper>

@@ -15,9 +15,9 @@ public interface ITPraiseService extends IService<TPraise> {
 
     /**
      * 获取点赞次数
-     * @param composeId
-     * @param type
+     * @param typeId
+     * @param type 类型：0:对作品点赞;1:对评论点赞;2:对回复点赞
      * @return
      */
-    long getPraiseNum(String composeId,String type);
+    long getPraiseNum(String typeId,String type);
 }

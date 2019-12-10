@@ -68,6 +68,9 @@ public class TCompose implements Serializable {
     @TableField(value = "created_time", fill = FieldFill.INSERT)
     private Date createdTime;
 
+    @ApiModelProperty(value = "排序编号")
+    @TableField("order_no")
+    private Long orderNo;
     //点赞次数
     @TableField(exist=false) // 非表字段
     private long praiseNum;
@@ -79,4 +82,12 @@ public class TCompose implements Serializable {
     //收藏次数
     @TableField(exist=false)
     private long enshrineNum;
+
+    //发表日记人的头像
+    @TableField(exist=false)
+    private String userImage;
+
+    //发表日记人的昵称
+    @TableField(exist=false)
+    private String userNickname;
 }

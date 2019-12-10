@@ -2,6 +2,8 @@ package com.yeelee.TD.mapper;
 
 import com.yeelee.TD.entity.TReply;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * <p>
@@ -13,4 +15,12 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface TReplyMapper extends BaseMapper<TReply> {
 
+    /**
+     * 查询回复次数
+     * @param replyId
+     * @param type
+     * @return
+     */
+    @Select("select count(pkid) from t_reply where reply_id=#{replyId} and reply_type=#{type}")
+    long getReplyNum(@Param("replyId") String replyId, @Param("type") String type);
 }
