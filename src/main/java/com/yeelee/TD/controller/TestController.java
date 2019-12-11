@@ -27,7 +27,7 @@ public class TestController {
     @ApiOperation(value = "条件分页查询")
     @PostMapping(value = "/getNum")
     public ResponseObj listPageByCondition(){
-        List<TCompose> composeList = composeService.getComposeList(1L, 3L, null);
+        List<TCompose> composeList = composeService.getComposeList(new TCompose(),1L);
         return ResponseObj.ok(composeList);
     }
 
