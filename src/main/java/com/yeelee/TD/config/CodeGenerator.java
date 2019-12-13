@@ -66,10 +66,10 @@ public class CodeGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
 // TODO       本机mysql8的端口是3307
-        dsc.setUrl("jdbc:mysql://localhost:3307/liyetest?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://47.98.200.77:3306/td_dev?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("857915060");
+        dsc.setPassword("Liye857915060@qq.com");
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
         dsc.setTypeConvert(new MySqlTypeConvert() {
