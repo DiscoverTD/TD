@@ -22,4 +22,9 @@
     <sql id="Base_Column_List">
         pkid, username, password, phone_num, salt, wechat_open_id, name, nickname, status, head_img, created_time, update_time
     </sql>
+
+    <select id="selectUserone" parameterType="com.yeelee.TD.entity.TUserLogin" resultType="TUserLogin">
+        select pkid,username, phone_num as phoneNum, `name`, status,head_img as headImg, nickname from t_user_login where username = #{username}
+    </select>
+
 </mapper>

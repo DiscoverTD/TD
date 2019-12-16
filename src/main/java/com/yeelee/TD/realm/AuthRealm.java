@@ -85,7 +85,6 @@ public class AuthRealm extends AuthorizingRealm {
         //获取用户名和密码
         String username = (String) authenticationToken.getPrincipal();
         QueryWrapper<TUserLogin> queryWrapper = new QueryWrapper<>(new TUserLogin());
-        queryWrapper.orderByDesc("order_no");
         queryWrapper.eq("username",username);
         TUserLogin user = userService.getOne(queryWrapper);
 

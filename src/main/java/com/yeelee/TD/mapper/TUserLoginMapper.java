@@ -2,6 +2,8 @@ package com.yeelee.TD.mapper;
 
 import com.yeelee.TD.entity.TUserLogin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.mapstruct.Mapper;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -11,6 +13,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author yeeLee
  * @since 2019-11-28
  */
+@Repository
 public interface TUserLoginMapper extends BaseMapper<TUserLogin> {
 
+    TUserLogin selectUserone(String username);
 }

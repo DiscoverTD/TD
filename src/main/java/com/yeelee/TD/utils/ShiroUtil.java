@@ -16,23 +16,23 @@ import com.yeelee.TD.entity.TUserLogin;
  */
 public class ShiroUtil {
 	
-    protected static Subject getSubject() {
+    public static Subject getSubject() {
         return SecurityUtils.getSubject();
     }
     // 获取当前用户
-    protected TUserLogin getCurrentUser() {
+    public static TUserLogin getCurrentUser() {
         return (TUserLogin) getSubject().getPrincipal();
     }
 
-    protected Session getSession() {
+    public static Session getSession() {
         return getSubject().getSession();
     }
-    
-    protected Session getSession(Boolean flag) {
+
+    public static Session getSession(Boolean flag) {
         return getSubject().getSession(flag);
     }
 
-    protected void login(AuthenticationToken token) {
+    public static void login(AuthenticationToken token) {
         getSubject().login(token);
     }
 
@@ -58,7 +58,7 @@ public class ShiroUtil {
 //        return getData(pageInfo);
 //    }
 
-    public Map<String, Object> getToken() {
+    public static Map<String, Object> getToken() {
         Map<String, Object> map = new HashMap<>();
         map.put("token", getSession().getId());
         return map;
