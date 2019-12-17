@@ -89,7 +89,7 @@ public class AuthRealm extends AuthorizingRealm {
         TUserLogin user = userService.getOne(queryWrapper);
 
         if (user == null) {
-            throw new UnknownAccountException(String.valueOf(StatusEnums.ACCOUNT_UNKNOWN.getInfo()));
+            throw new UnknownAccountException("用户不存在");
         }
         /**
          * 交给Shiro进行密码的解密校验
