@@ -4,6 +4,7 @@ import com.yeelee.TD.entity.TPraise;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -13,6 +14,7 @@ import org.apache.ibatis.annotations.Select;
  * @author yeeLee
  * @since 2019-11-28
  */
+@Repository
 public interface TPraiseMapper extends BaseMapper<TPraise> {
 
     @Select("select count(pkid) from t_praise where type_id=#{typeId} and type=#{type} and status=1")

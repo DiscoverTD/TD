@@ -15,4 +15,9 @@ public class SysConstant {
     public static final String MEIZU_WEATHER_URL = "http://aider.meizu.com/app/weather/listWeather";
     public static final String TIME_MOVIE_HOT_URL = "https://api-m.mtime.cn/Showtime/LocationMovies.api";
 
+    //默认第一页
+    public final static long PAGENUM = 1L;
+    //默认每页8条数据
+    public final static long PAGESIZE = 8L;
+
 }

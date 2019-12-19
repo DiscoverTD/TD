@@ -2,11 +2,11 @@ package com.yeelee.TD.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.yeelee.TD.config.SysConstant;
 import com.yeelee.TD.entity.TCompose;
 import com.yeelee.TD.entity.TUserLogin;
 import com.yeelee.TD.mapper.TComposeMapper;
 import com.yeelee.TD.service.*;
-import com.yeelee.TD.utils.BizProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +48,7 @@ public class TComposeServiceImpl extends ServiceImpl<TComposeMapper, TCompose> i
             queryWrapper.lt("order_no",orderNo);
         }
         // 最后拼接sql
-        queryWrapper.last("limit 0,"+BizProperties.PAGESIZE+"");
+        queryWrapper.last("limit 0,"+ SysConstant.PAGESIZE+"");
         List<TCompose> list = list(queryWrapper);
         for (TCompose t : list) {
             String pkid = t.getPkid();

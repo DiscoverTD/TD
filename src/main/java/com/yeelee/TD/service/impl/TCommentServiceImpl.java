@@ -2,6 +2,7 @@ package com.yeelee.TD.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.yeelee.TD.config.SysConstant;
 import com.yeelee.TD.entity.TComment;
 import com.yeelee.TD.entity.TUserLogin;
 import com.yeelee.TD.mapper.TCommentMapper;
@@ -9,7 +10,6 @@ import com.yeelee.TD.service.ITCommentService;
 import com.yeelee.TD.service.ITPraiseService;
 import com.yeelee.TD.service.ITReplyService;
 import com.yeelee.TD.service.ITUserLoginService;
-import com.yeelee.TD.utils.BizProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,7 +51,7 @@ public class TCommentServiceImpl extends ServiceImpl<TCommentMapper, TComment> i
             // lt 小于 <
             queryWrapper.lt("order_no",orderNo);
         }
-        queryWrapper.last("limit 0,"+BizProperties.PAGESIZE+"");
+        queryWrapper.last("limit 0,"+ SysConstant.PAGESIZE+"");
         List<TComment> list = list(queryWrapper);
         for (TComment t : list) {
             String commentId = t.getPkid();

@@ -4,6 +4,7 @@ import com.yeelee.TD.entity.TComment;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -13,6 +14,7 @@ import org.apache.ibatis.annotations.Select;
  * @author yeeLee
  * @since 2019-11-28
  */
+@Repository
 public interface TCommentMapper extends BaseMapper<TComment> {
     /**
      * 获取评论次数

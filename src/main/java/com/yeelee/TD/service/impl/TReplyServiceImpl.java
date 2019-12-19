@@ -2,12 +2,12 @@ package com.yeelee.TD.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.yeelee.TD.config.SysConstant;
 import com.yeelee.TD.entity.TReply;
 import com.yeelee.TD.entity.TUserLogin;
 import com.yeelee.TD.mapper.TReplyMapper;
 import com.yeelee.TD.service.ITReplyService;
 import com.yeelee.TD.service.ITUserLoginService;
-import com.yeelee.TD.utils.BizProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,7 +44,7 @@ public class TReplyServiceImpl extends ServiceImpl<TReplyMapper, TReply> impleme
             queryWrapper.lt("order_no", orderNo);
         }
         // 最后拼接sql
-        queryWrapper.last("limit 0,"+BizProperties.PAGESIZE+"");
+        queryWrapper.last("limit 0,"+ SysConstant.PAGESIZE+"");
         List<TReply> list = list(queryWrapper);
         for (TReply t : list) {
             // 查询回复人的头像，昵称
