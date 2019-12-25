@@ -1,5 +1,9 @@
 package com.yeelee.TD.realm;
 
+import com.yeelee.TD.entity.adminEntity.TMenu;
+import com.yeelee.TD.entity.adminEntity.TRole;
+import com.yeelee.TD.service.adminService.ITMenuService;
+import com.yeelee.TD.service.adminService.ITRoleService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
@@ -11,10 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.yeelee.TD.entity.TComment;
-import com.yeelee.TD.entity.TReply;
 import com.yeelee.TD.entity.TUserLogin;
-import com.yeelee.TD.enums.StatusEnums;
 import com.yeelee.TD.service.impl.TUserLoginServiceImpl;
 
 import java.util.List;
@@ -27,15 +28,14 @@ import java.util.stream.Collectors;
  */
 @Component
 public class AuthRealm extends AuthorizingRealm {
-
     @Autowired
     private TUserLoginServiceImpl userService;
 
-//    @Autowired
-//    private RoleService roleService;
-//
-//    @Autowired
-//    private MenuService menuService;
+    @Autowired
+    private ITRoleService roleService;
+
+    @Autowired
+    private ITMenuService menuService;
 
     /**
      * 权限认证
@@ -55,14 +55,14 @@ public class AuthRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
 
         //获取用户角色
-//        List<Role> roleList = roleService.findUserRole(user.getUsername());
-//        Set<String> roleSet = roleList.stream().map(Role::getName).collect(Collectors.toSet());
-//        simpleAuthorizationInfo.setRoles(roleSet);
-//
-//        //获取用户权限
-//        List<Menu> menuList = menuService.findUserPermissions(user.getUsername());
-//        Set<String> permSet = menuList.stream().map(Menu::getPerms).collect(Collectors.toSet());
-//        simpleAuthorizationInfo.setStringPermissions(permSet);
+        List<TRole> roleList = roleService.findUserRole(user.getUsername());
+        Set<String> roleSet = roleList.stream().map(TRole::getName).collect(Collectors.toSet());
+        simpleAuthorizationInfo.setRoles(roleSet);
+
+        //获取用户权限
+        List<TMenu> menuList = menuService.findUserPermissions(user.getUsername());
+        Set<String> permSet = menuList.stream().map(TMenu::getPerms).collect(Collectors.toSet());
+        simpleAuthorizationInfo.setStringPermissions(permSet);
 
         return simpleAuthorizationInfo;
     }
@@ -81,9 +81,12 @@ public class AuthRealm extends AuthorizingRealm {
          * 2. 通过username查询数据库得到用户对象
          * 3. 调用Authenticator进行密码校验
          */
-
-        //获取用户名和密码
-        String username = (String) authenticationToken.getPrincipal();
+    	//1.把AuthenticationToken转换为UsernamePasswordToken
+    	UsernamePasswordToken userToken = (UsernamePasswordToken) authenticationToken;
+    	
+    	//2.从UsernamePasswordToken中获取username
+    	String username = userToken.getUsername();
+    	
         QueryWrapper<TUserLogin> queryWrapper = new QueryWrapper<>(new TUserLogin());
         queryWrapper.eq("username",username);
         TUserLogin user = userService.getOne(queryWrapper);
@@ -96,12 +99,14 @@ public class AuthRealm extends AuthorizingRealm {
          * 调用SecurityUtils.getSubject().getPrincipal() 遇到类型转换问题，报错 String !=> User
          * 请参考这篇文章：{@link https://blog.csdn.net/qq_35981283/article/details/78634575}
          */
+        ByteSource credentialsSalt = ByteSource.Util.bytes(user.getSalt());
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 user,
                 user.getPassword(),
-                ByteSource.Util.bytes(user.getSalt()),
+                credentialsSalt,
                 getName()
         );
         return authenticationInfo;
     }
+
 }

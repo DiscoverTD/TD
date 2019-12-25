@@ -1,0 +1,39 @@
+2019-12-18 09:21:07,847 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 5924 (F:\TD\TD\target\classes started by 张育 in F:\TD\TD)
+2019-12-18 09:21:07,924 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-18 09:21:07,924 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-18 09:21:22,817 INFO (StartupInfoLogger.java:59)- Started TdApplication in 17.687 seconds (JVM running for 23.187)
+2019-12-18 09:21:22,827 INFO (TdApplication.java:46)- ========================启动成功==============================
+2019-12-18 09:39:33,385 DEBUG (BaseJdbcLogger.java:143)- ==>  Preparing: SELECT username,password,phone_num,salt,wechat_open_id,name,nickname,status,head_img,created_time,update_time,pkid FROM t_user_login WHERE username = ? 
+2019-12-18 09:39:33,415 DEBUG (BaseJdbcLogger.java:143)- ==> Parameters: 13945678911(String)
+2019-12-18 09:39:33,442 DEBUG (BaseJdbcLogger.java:143)- <==      Total: 1
+2019-12-18 09:39:33,476 DEBUG (BaseJdbcLogger.java:143)- ==>  Preparing: select pkid,username, phone_num as phoneNum, `name`, status,head_img as headImg, nickname from t_user_login where username = ? 
+2019-12-18 09:39:33,482 DEBUG (BaseJdbcLogger.java:143)- ==> Parameters: 13945678911(String)
+2019-12-18 09:39:33,484 DEBUG (BaseJdbcLogger.java:143)- <==      Total: 1
+2019-12-18 10:21:05,612 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 3476 (F:\TD\TD\target\classes started by 张育 in F:\TD\TD)
+2019-12-18 10:21:05,614 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-18 10:21:05,614 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-18 10:21:10,385 INFO (StartupInfoLogger.java:59)- Started TdApplication in 5.191 seconds (JVM running for 6.367)
+2019-12-18 10:21:10,394 INFO (TdApplication.java:46)- ========================启动成功==============================
+2019-12-18 10:21:18,789 DEBUG (BaseJdbcLogger.java:143)- ==>  Preparing: SELECT username,password,phone_num,salt,wechat_open_id,name,nickname,status,head_img,created_time,update_time,pkid FROM t_user_login WHERE username = ? 
+2019-12-18 10:21:18,817 DEBUG (BaseJdbcLogger.java:143)- ==> Parameters: 13945678911(String)
+2019-12-18 10:21:18,830 DEBUG (BaseJdbcLogger.java:143)- <==      Total: 1
+2019-12-18 10:21:18,842 DEBUG (BaseJdbcLogger.java:143)- ==>  Preparing: select pkid,username, phone_num as phoneNum, `name`, status,head_img as headImg, nickname from t_user_login where username = ? 
+2019-12-18 10:21:18,845 DEBUG (BaseJdbcLogger.java:143)- ==> Parameters: 13945678911(String)
+2019-12-18 10:21:18,847 DEBUG (BaseJdbcLogger.java:143)- <==      Total: 1
+2019-12-18 10:22:00,965 DEBUG (BaseJdbcLogger.java:143)- ==>  Preparing: SELECT username,password,phone_num,salt,wechat_open_id,name,nickname,status,head_img,created_time,update_time,pkid FROM t_user_login WHERE username = ? 
+2019-12-18 10:22:00,970 DEBUG (BaseJdbcLogger.java:143)- ==> Parameters: 13945678911(String)
+2019-12-18 10:22:00,973 DEBUG (BaseJdbcLogger.java:143)- <==      Total: 1
+2019-12-18 10:22:00,975 DEBUG (BaseJdbcLogger.java:143)- ==>  Preparing: select pkid,username, phone_num as phoneNum, `name`, status,head_img as headImg, nickname from t_user_login where username = ? 
+2019-12-18 10:22:00,978 DEBUG (BaseJdbcLogger.java:143)- ==> Parameters: 13945678911(String)
+2019-12-18 10:22:00,980 DEBUG (BaseJdbcLogger.java:143)- <==      Total: 1
+2019-12-18 16:37:31,377 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 13812 (F:\TD\TD\target\classes started by 张育 in F:\TD\TD)
+2019-12-18 16:37:31,380 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-18 16:37:31,381 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-18 16:37:36,559 INFO (StartupInfoLogger.java:59)- Started TdApplication in 5.748 seconds (JVM running for 7.55)
+2019-12-18 16:37:36,568 INFO (TdApplication.java:46)- ========================启动成功==============================
+2019-12-18 16:39:30,996 DEBUG (BaseJdbcLogger.java:143)- ==>  Preparing: SELECT username,password,phone_num,salt,wechat_open_id,name,nickname,status,head_img,created_time,update_time,pkid FROM t_user_login WHERE username = ? 
+2019-12-18 16:39:31,018 DEBUG (BaseJdbcLogger.java:143)- ==> Parameters: 13945678911(String)
+2019-12-18 16:39:31,035 DEBUG (BaseJdbcLogger.java:143)- <==      Total: 1
+2019-12-18 16:39:31,048 DEBUG (BaseJdbcLogger.java:143)- ==>  Preparing: select pkid,username, phone_num as phoneNum, `name`, status,head_img as headImg, nickname from t_user_login where username = ? 
+2019-12-18 16:39:31,051 DEBUG (BaseJdbcLogger.java:143)- ==> Parameters: 13945678911(String)
+2019-12-18 16:39:31,052 DEBUG (BaseJdbcLogger.java:143)- <==      Total: 1

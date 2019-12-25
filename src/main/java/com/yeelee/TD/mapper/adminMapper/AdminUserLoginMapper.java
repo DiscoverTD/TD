@@ -1,9 +1,8 @@
-package com.yeelee.TD.mapper;
+package com.yeelee.TD.mapper.adminMapper;
 
-import com.yeelee.TD.entity.TUserLogin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.yeelee.TD.entity.TUserLogin;
 import org.apache.ibatis.annotations.Select;
-import org.mapstruct.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.List;
  * @since 2019-11-28
  */
 @Repository
-public interface TUserLoginMapper extends BaseMapper<TUserLogin> {
+public interface AdminUserLoginMapper extends BaseMapper<TUserLogin> {
 
     TUserLogin selectUserone(String username);
 

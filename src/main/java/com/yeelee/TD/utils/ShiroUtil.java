@@ -32,10 +32,13 @@ public class ShiroUtil {
         return getSubject().getSession(flag);
     }
 
-    public static void login(AuthenticationToken token) {
+    public static String login(AuthenticationToken token) {
         getSubject().login(token);
+        return token.toString();
     }
-
+    
+  
+    
 //    private Map<String, Object> getData(PageInfo<?> pageInfo) {
 //        Map<String, Object> data = new HashMap<>();
 //        data.put("rows", pageInfo.getList());

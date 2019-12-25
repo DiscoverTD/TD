@@ -13,10 +13,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -68,6 +65,20 @@ public class AdminController {
 			e.printStackTrace();
 		}
 		return "";
+	}
+
+
+	/**
+	 * 未登录，shiro应重定向到登录界面，此处返回未登录状态信息由前端控制跳转页面
+	 * @return
+	 */
+	@RequestMapping(value = "/unauth")
+	@ResponseBody
+	public Object unauth() {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("code", "401");
+		map.put("msg", "未登录");
+		return map;
 	}
 	
 }

@@ -1,0 +1,44 @@
+2019-12-11 11:03:29,896 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 16252 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 11:03:29,899 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 11:03:29,899 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 11:04:11,201 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 4268 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 11:04:11,204 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 11:04:11,205 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 15:46:54,040 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 15608 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 15:46:54,044 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 15:46:54,045 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 16:50:38,985 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 15308 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 16:50:38,991 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 16:50:38,992 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:31:08,272 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 9724 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:31:08,277 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:31:08,278 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:32:57,357 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 17724 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:32:57,362 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:32:57,362 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:37:30,870 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 9080 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:37:30,876 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:37:30,877 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:38:06,799 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 16220 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:38:06,803 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:38:06,804 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:38:37,787 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 18864 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:38:37,792 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:38:37,793 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:38:51,695 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 20108 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:38:51,701 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:38:51,701 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:42:09,901 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 13616 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:42:09,939 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:42:09,940 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:44:53,872 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 19584 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:44:53,878 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:44:53,878 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:45:11,392 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 19608 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:45:11,396 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:45:11,396 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:53:29,511 INFO (StartupInfoLogger.java:50)- Starting TdApplication on DESKTOP-JC3OSEG with PID 17028 (started by 张育 in C:\Users\张育\git\TD)
+2019-12-11 18:53:29,542 DEBUG (StartupInfoLogger.java:53)- Running with Spring Boot v2.1.7.RELEASE, Spring v5.1.9.RELEASE
+2019-12-11 18:53:29,543 INFO (SpringApplication.java:651)- The following profiles are active: dev
+2019-12-11 18:53:35,790 INFO (StartupInfoLogger.java:59)- Started TdApplication in 6.861 seconds (JVM running for 7.548)
+2019-12-11 18:53:35,805 INFO (TdApplication.java:46)- ========================启动成功==============================
